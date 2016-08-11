@@ -7,11 +7,12 @@
     <ul class="nav pull-right">
 
     <% if user_signed_in? %>
-       <li> <span>Здравствуйте, <%= current_user.email %></span> </li>
-        <li> <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %> </li>
+      <li class="hello-user">Здравствуйте, <%= current_user.email %></li>
+      <li> <%= link_to 'Редактировать профиль', edit_user_registration_path %> </li>
+      <li> <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %> </li>
     <% else %>
-       <li> <%= link_to 'Войти', new_user_session_path %> </li>
-       <li> <%= link_to 'Зарегистрироваться', new_user_registration_path %> </li>
+      <li> <%= link_to 'Войти', new_user_session_path %> </li>
+      <li> <%= link_to 'Зарегистрироваться', new_user_registration_path %> </li>
     <% end %>
     </ul>
   </nav>
