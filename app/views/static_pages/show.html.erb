@@ -3,7 +3,11 @@
 
 
   <% @users.each do |user| %>
-  <%= user.email %>
+    <%= user.name %>
+    <%= link_to "Создать чат с #{user.name}", new_chat_room_path %>
+
   <% end %>
+
+
 
 
