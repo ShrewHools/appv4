@@ -50,8 +50,6 @@ header{
     }
   }
 }
-
-
                                                   // start root
 .center{
   text-align: center;
@@ -64,7 +62,19 @@ header{
   }
 }
                                                   //end root
+
 // all form
 .field{
   padding-bottom: 16px;
 }
+
+
+//start chat
+#messages {
+  max-height: 450px;
+  overflow-y: auto;
+  .avatar {
+    margin: 0.5rem;
+  }
+}
+// end chat

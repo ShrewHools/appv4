@@ -1,5 +1,9 @@
-<h1>All users</h1>
+<h1>Список всех пользователей</h1>
+<h2>Нажмите на имя пользователя, чтобы начать с ним переписку</h2>
 
-<% @users.each do |user| %>
-  <p><%= user.email %></p>
-<% end %>
+
+  <% @users.each do |user| %>
+  <%= user.email %>
+  <% end %>
+
+

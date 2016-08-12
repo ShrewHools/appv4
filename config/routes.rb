@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'static_pages#index'
-  # get 'static_pages/show', as:'users_root'
+  resources :chat_rooms, only: [:new, :create, :show, :index]
   match '/users', to:'static_pages#show', via: 'get'
 
   devise_for :users, controllers: { sessions: "users/sessions",
