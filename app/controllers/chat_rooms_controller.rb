@@ -9,6 +9,7 @@ class ChatRoomsController < ApplicationController
   end
 
   def new
+    @chat_to_user = params['id']
     @chat_room = ChatRoom.new
   end
 
@@ -20,10 +21,6 @@ class ChatRoomsController < ApplicationController
     else
       render 'new'
     end
-  end
-
-  def delete
-    @chat_room.delete
   end
 
   private
