@@ -1,10 +1,11 @@
-<h1>Add chat room</h1>
-
-<%= form_for @chat_room do |f| %>
-  <div class="form-group">
-    <%= hidden_field_tag 'chat_room[chat_to_user]', @chat_to_user %>
-    <%= f.label :title %>
-    <%= f.text_field :title, autofocus: true, class: 'form-control' %>
-  </div>
-  <%= f.submit "Add!", class: 'btn btn-primary' %>
-<% end %>
+<div class="container">
+  <h1>Создание чата =)</h1>
+  <%= form_for @chat_room do |f| %>
+    <div class="form-group">
+      <%= hidden_field_tag 'chat_room[chat_to_user]', @chat_to_user %>
+      <%= f.label :title, 'Название чата' %>
+      <%= f.text_field :title, autofocus: true, class: 'form-control' %>
+    </div>
+    <%= f.submit "Создать", class: 'btn btn-primary' %>
+  <% end %>
+</div>

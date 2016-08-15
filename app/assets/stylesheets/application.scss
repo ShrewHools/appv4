@@ -20,19 +20,21 @@
   border-color: #d6e9c6;
 }
 
-html,body{
-  height: 100%;
-  background-color: #333;
+.alert-alert {
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
 }
 
 body{
+  background-color: #333;
+  margin-bottom: 125px;
   color: #337ab7;
-  text-align: center;
-  text-shadow: 0 1px 3px rgba(0,0,0,.5);
-  box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-}
-
-h1,h2{
   text-align: center;
 }
 
@@ -91,7 +93,9 @@ header{
 
 
 //start chat
-
+.chat_room{
+  position: relative;
+}
 #messages {
   max-height: 450px;
   overflow-y: auto;
@@ -115,3 +119,22 @@ header{
   }
 }
 // end chat
+
+//start footer
+footer{
+  position: absolute;
+  bottom: 0;
+  height: 100px;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+  box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+  p{
+    padding-top: 35px;
+    padding-bottom: 35px;
+    color: #fff;
+  }
+}
+// end footer

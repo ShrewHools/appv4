@@ -1,5 +1,6 @@
+<div class="container chat_room">
 <h1><%= @chat_room.title %></h1>
-<div class="container">
+
   <div id="messages" data-chat-room-id="<%= @chat_room.id %>">
     <%= render @chat_room.messages %>
   </div>
@@ -8,9 +9,10 @@
     <div class="form-group">
       <%= f.label :body, 'Сообщение' %>
       <%= f.text_area :body, class: 'form-control' %>
-      <small class="text-muted">From 2 to 1000 characters</small>
+      <small class="text-muted">Сообщение должно быть более 2-х символов</small>
     </div>
 
-    <%= f.submit "Post", class: 'btn btn-primary btn-lg' %>
-  <% end %>
+    <%= f.submit "Отправить", class: 'btn btn-primary btn-lg' %>
+
 </div>
+ <% end %>
