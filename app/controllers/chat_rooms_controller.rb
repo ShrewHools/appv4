@@ -1,6 +1,7 @@
 class ChatRoomsController < ApplicationController
   def index
     @chat_rooms = ChatRoom.all
+    @chat_rooms_for_user = ChatRoom.where(chat_to_user: current_user.id)
   end
 
   def show
@@ -14,6 +15,7 @@ class ChatRoomsController < ApplicationController
   end
 
   def create
+    @chat_to_user = params['chat_to_user']
     @chat_room = current_user.chat_rooms.build(chat_room_params)
     if @chat_room.save
       flash[:success] = 'Chat room added!'
@@ -26,6 +28,6 @@ class ChatRoomsController < ApplicationController
   private
 
   def chat_room_params
-    params.require(:chat_room).permit(:title)
+    params.require(:chat_room).permit(:title, 'chat_to_user')
   end
 end

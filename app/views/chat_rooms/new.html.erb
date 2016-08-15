@@ -2,7 +2,7 @@
 
 <%= form_for @chat_room do |f| %>
   <div class="form-group">
-    <%= hidden_field_tag 'chat_to_user', @chat_to_user %>
+    <%= hidden_field_tag 'chat_room[chat_to_user]', @chat_to_user %>
     <%= f.label :title %>
     <%= f.text_field :title, autofocus: true, class: 'form-control' %>
   </div>

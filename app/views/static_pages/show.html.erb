@@ -6,7 +6,7 @@
       <div class="user-block">
           <%= gravatar_for user %>
           <%= user.name %>
-          <%= link_to "Создать чат с #{user.name}", new_chat_room_path, class:'btn btn-primary btn-md right' %>
+          <%= link_to "Создать чат с #{user.name}", new_chat_room_path(user.id), class:'btn btn-primary btn-md right' %>
       </div>
     </div>
   <% end %>
