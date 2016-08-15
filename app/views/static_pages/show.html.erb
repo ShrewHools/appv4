@@ -1,13 +1,13 @@
 <h1>Список всех пользователей</h1>
-<h2>Нажмите на имя пользователя, чтобы начать с ним переписку</h2>
 
-
+<div class="container-center">
   <% @users.each do |user| %>
-    <%= user.name %>
-    <%= link_to "Создать чат с #{user.name}", new_chat_room_path %>
-
+    <div class="row user-ws">
+      <div class="user-block">
+          <%= gravatar_for user %>
+          <%= user.name %>
+         <%= link_to "Создать чат с #{user.name}", new_chat_room_path, class:'btn btn-primary btn-md right' %>
+      </div>
+    </div>
   <% end %>
-
-
-
-
+</div>
