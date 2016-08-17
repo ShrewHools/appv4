@@ -7,7 +7,15 @@
           <%= gravatar_for user %>
           <%= user.name %>
           <% unless current_user.id == user.id %>
-          <%= link_to "Создать чат с #{user.name}", new_chat_room_path(user.id), class:'btn btn-primary btn-md right' %>
+            <%= link_to "Создать чат", new_chat_room_path(user.id), class:'btn btn-primary btn-md' %>
+
+            <% if current_user.admin %>
+              <% if user.ban %>
+              <%= link_to "Разблокировать", unban_path(user.id), method: :post, class:'btn btn-primary btn-md' %>
+              <% else %>
+                <%= link_to "Заблокировать", ban_path(user.id), method: :post, class:'btn btn-primary btn-md' %>
+              <% end %>
+            <% end %>
           <% end %>
       </div>
     </div>

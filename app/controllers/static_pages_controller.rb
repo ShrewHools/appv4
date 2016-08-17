@@ -11,4 +11,36 @@ class StaticPagesController < ApplicationController
     end
   end
 
+  def ban
+    if current_user.admin?
+      u = User.where(id: params[:id]).first
+      if u
+        u.ban = true
+        u.save!
+
+        redirect_to users_path, alert: "Пользователь #{u.email} был заблокирован"
+      else
+        redirect_to users_path, alert: "Пользователь #{u.email} не найден!"
+      end
+    else
+      flash[:denger]="У вас нет доступа к данной функции!"
+    end
+  end
+
+  def unban
+    if current_user.admin?
+      u = User.where(id: params[:id]).first
+      if u
+        u.ban = false
+        u.save!
+
+        redirect_to users_path, alert: "Пользователь #{u.email} был разблокирован!"
+      else
+        redirect_to users_path, alert: "Пользователь #{u.email} не найден!"
+      end
+    else
+      flash[:denger]="У вас нет доступа к данной функции!"
+    end
+  end
+
 end
